@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.gds.profile</groupId>
+	<artifactId>profile-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>My Maven Profile Project</name>
+	<url>http://a4steam.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<dependencies>
+	</dependencies>
+  
+	<profiles>
+		<profile>
+			<id>development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>environment</name>
+        			<value>development</value>
+				</property>
+			</activation>
+			<build>
+			</build>
+			<modules></modules>
+			<repositories></repositories>
+			<pluginRepositories></pluginRepositories>
+			<dependencies></dependencies>
+			<reporting></reporting>
+			<dependencyManagement></dependencyManagement>
+			<distributionManagement></distributionManagement>
+		</profile>
+		<profile>
+			<id>test</id>
+			<activation>
+				<property>
+					<name>environment</name>
+					<value>test</value>
+				</property>
+			</activation>
+		</profile>
+		<profile>
+			<id>production</id>
+			<activation>
+				<property>
+					<name>environment</name>
+					<value>production</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
+</project>
